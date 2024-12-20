@@ -1,0 +1,17 @@
+diff --git a/components/drivers/usb/cherryusb/port/dwc2/usb_dc_dwc2.c b/components/drivers/usb/cherryusb/port/dwc2/usb_dc_dwc2.c
+index 72006abd5f..8eef7ceeee 100644
+--- a/components/drivers/usb/cherryusb/port/dwc2/usb_dc_dwc2.c
++++ b/components/drivers/usb/cherryusb/port/dwc2/usb_dc_dwc2.c
+@@ -100,7 +100,12 @@
+ #define USB_OTG_OUTEP(i) ((DWC2_OUTEndpointTypeDef *)(USBD_BASE + USB_OTG_OUT_ENDPOINT_BASE + ((i)*USB_OTG_EP_REG_SIZE)))
+ #define USB_OTG_FIFO(i)  *(__IO uint32_t *)(USBD_BASE + USB_OTG_FIFO_BASE + ((i)*USB_OTG_FIFO_SIZE))
+ 
++#ifdef SOC_FAMILY_AT32
++extern unsigned int system_core_clock; /*!< system clock frequency (core clock) */
++#define SystemCoreClock system_core_clock
++#else
+ extern uint32_t SystemCoreClock;
++#endif
+ 
+ /* Endpoint state */
+ struct dwc2_ep_state {
