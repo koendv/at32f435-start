@@ -22,9 +22,9 @@ cd ../../..
 patch -p1 < bsp/at32/at32f435-start/patches/usb_dc_dwc2.patch
 ```
 
-### black magic rtthread package
+### black magic debug rtthread package
 
-The "black magic" rt-thread package needs to be added to the rt-thread environment by hand. Follow the [instructions](https://github.com/koendv/blackmagic-rtthread/tree/main#installation).
+The "black magic debug" rt-thread package needs to be added to the rt-thread environment by hand. Follow the [instructions](https://github.com/koendv/blackmagic-rtthread/tree/main#installation).
 
 ### configuration
 
@@ -32,7 +32,7 @@ Check whether the LED pin in ```pinout.h``` is the same as on your board.
 
 Configuration files:
 
-- black magic probe: ```platform.h, platform.c```
+- black magic debug: ```platform.h, platform.c```
 
 - free-dap: ```dap_config.h```
 
@@ -54,7 +54,7 @@ scons
 
 ## installing
 
-The firmware can be installed using device firmware upgrade DFU, openocd or black magic probe.
+The firmware can be installed using device firmware upgrade DFU, openocd or black magic debug.
 
 ### DFU
 
@@ -113,9 +113,9 @@ Using [openocd](https://github.com/ArteryTek/openocd) from ArteryTek. Connect a 
 openocd -f interface/cmsis-dap.cfg -f scripts/target/at32f435xx.cfg
 ```
 
-### Black Magic Probe
+### Black Magic Debug
 
-Using [black magic probe](https://black-magic.org/index.html).  With the file `rtthread.elf` in your current directory, connect black magic probe to the AT32F435 SWD port. Command line:
+Using [black magic debug](https://black-magic.org/index.html).  With the file `rtthread.elf` in your current directory, connect black magic debug to the AT32F435 SWD port. Command line:
 
 ```sh
 $ arm-none-eabi-gdb -q

@@ -1,5 +1,7 @@
 # at32f435-start
 
+[![at32f435](doc/at32f435_small.jpg)](doc/at32f435_big.jpg)
+
 This is firmware for a debug probe that solves the question what to choose - [OpenOCD](https://openocd.org/) or [Black Magic Probe](https://black-magic.org/index.html). With this firmware you do not have to choose between OpenOCD and Black Magic Probe - it does both.
 
 ## use
