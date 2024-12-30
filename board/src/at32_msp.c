@@ -56,16 +56,16 @@ void at32_msp_usart_init(void *instance)
     if(usart_x == USART3)
     {
         crm_periph_clock_enable(CRM_USART3_PERIPH_CLOCK, TRUE);
-        crm_periph_clock_enable(CRM_GPIOB_PERIPH_CLOCK, TRUE);
+        crm_periph_clock_enable(CRM_GPIOC_PERIPH_CLOCK, TRUE);
 
         gpio_init_struct.gpio_mode = GPIO_MODE_MUX;
         gpio_init_struct.gpio_out_type = GPIO_OUTPUT_PUSH_PULL;
         gpio_init_struct.gpio_pull = GPIO_PULL_NONE;
-        gpio_init_struct.gpio_pins = GPIO_PINS_10 | GPIO_PINS_11;
-        gpio_init(GPIOB, &gpio_init_struct);
+        gpio_init_struct.gpio_pins = GPIO_PINS_4 | GPIO_PINS_5;
+        gpio_init(GPIOC, &gpio_init_struct);
 
-        gpio_pin_mux_config(GPIOB, GPIO_PINS_SOURCE10, GPIO_MUX_7);
-        gpio_pin_mux_config(GPIOB, GPIO_PINS_SOURCE11, GPIO_MUX_7);
+        gpio_pin_mux_config(GPIOC, GPIO_PINS_SOURCE4, GPIO_MUX_7);
+        gpio_pin_mux_config(GPIOC, GPIO_PINS_SOURCE5, GPIO_MUX_7);
     }
 #endif
     /* add others */
