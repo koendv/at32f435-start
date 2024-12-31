@@ -260,9 +260,6 @@ char cdc0_getchar_timeout(uint32_t timeout_ticks)
 
     /* take character from ringbuffer */
     len = rt_ringbuffer_getchar(&cdc0_read_rb, &ch);
-    /* clear "character received" event */
-    if (cdc_event != NULL)
-        rt_event_recv(cdc_event, EVENT_CDC0_RX, RT_EVENT_FLAG_OR | RT_EVENT_FLAG_CLEAR, 0, NULL);
     /* schedule next usb read */
     cdc0_next_read();
     /* use character from ringbuffer */

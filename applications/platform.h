@@ -41,13 +41,18 @@ extern bool running_status;
 #define BLACKMAGIC_FASTCLOCK      910000
 
 #if 1
+/* aux serial port - connect to target console */
 #define AUX_UART          "uart3"
 #define AUX_DEFAULT_SPEED 115200U
 #define AUX_RX_BUFSIZE    BSP_UART3_RX_BUFSIZE
 #endif
 
+#if 1
 /* rtt_if.c rtt input and output via cdc1 */
 #define CUSTOM_RTT_IF
+#define RTT_UP_BUF_SIZE   (2048U + 8U)
+#define RTT_DOWN_BUF_SIZE 256U
+#endif
 
 #if 0
 #define PLATFORM_HAS_TRACESWO
