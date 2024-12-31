@@ -124,14 +124,14 @@ void usbd_cdc_acm_set_dtr(uint8_t busid, uint8_t intf, bool dtr)
     {
         USB_LOG_RAW("cdc0 intf %d dtr:%d\r\n", intf, dtr);
         cdc0_dtr = dtr;
-        cdc0_next_read();
+        if (dtr) cdc0_next_read();
         cdc0_set_dtr(cdc0_dtr);
     }
     else if (intf == CDC1_INTF)
     {
         USB_LOG_RAW("cdc1 intf %d dtr:%d\r\n", intf, dtr);
         cdc1_dtr = dtr;
-        cdc1_next_read();
+        if (dtr) cdc1_next_read();
         cdc1_set_dtr(cdc1_dtr);
     }
     else
