@@ -49,7 +49,7 @@ extern bool running_status;
 
 #if 1
 /* rtt_if.c rtt input and output via cdc1 */
-#define CUSTOM_RTT_IF
+#define RTT_IN_CDC1
 #define RTT_UP_BUF_SIZE   (2048U + 8U)
 #define RTT_DOWN_BUF_SIZE 256U
 #endif
