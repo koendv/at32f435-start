@@ -10,8 +10,12 @@
 
 #include "rtthread.h"
 
+#define DBG_TAG "USB"
+#define DBG_LVL DBG_ERR
+#include <rtdbg.h>
+
 #define CONFIG_USB_DBG_LEVEL USB_DBG_WARNING
-#define CONFIG_USB_PRINTF(...) rt_kprintf(__VA_ARGS__)
+#define CONFIG_USB_PRINTF(...) LOG_E(__VA_ARGS__)
 
 #define usb_malloc(size) rt_malloc(size) 
 #define usb_free(ptr)    rt_free(ptr)
