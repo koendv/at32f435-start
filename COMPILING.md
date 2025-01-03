@@ -17,6 +17,7 @@ cd bsp/at32/
 mv at32f435-start at32f435-start.CLEAN
 git clone https://github.com/koendv/at32f435-start/
 cd at32f435-start
+pkgs --update
 # back to rt-thread top
 cd ../../..
 patch -p1 < bsp/at32/at32f435-start/patches/usb_dc_dwc2.patch
